@@ -18,3 +18,11 @@ module.exports = {
     ],
   },
 }
+module.exports = {
+  "rules": {
+    "unused-function": "off"
+  }
+};
+module.exports = {
+  parser: "@babel/eslint-parser",
+};
