@@ -43,7 +43,7 @@ To get started with the Web3 Ethereum Transaction website, follow these steps:
 ![Homepage](Screenshots/homepage.png)
 _Figure 1: Homepage of the Web3 Ethereum Transaction website_
 
-![Transaction History](screenshots/transaction-history.png)
+![Transaction History](Screenshots/transaction-history.png)
 _Figure 2: Transaction history page with beautiful representation and attached GIFs_
 
 ## Contributing
