@@ -1,7 +1,8 @@
+import React, { useContext } from 'react';
 import { useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-
+import { TransactionsContext } from '../context/TransactionsContext';
 import logo from "../../images/logo.png";
  
 const NavbarItems = ({ title, classProps }) => {
@@ -14,6 +15,8 @@ const NavbarItems = ({ title, classProps }) => {
 
 const Navbar = () => {
 
+    const {connectWallet, currentAccount } = useContext(TransactionsContext);
+
     const [toogleMenu, setToogleMenu] = useState(false);
 
     return(
@@ -25,9 +28,13 @@ const Navbar = () => {
                 {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
                     <NavbarItems key={item+index} title={item} />
                 ))}
-                <li className="bg-[#a099ff] py-2 px-6 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-                    Login
-                </li>
+                {!currentAccount &&(
+                        <button type='button' onClick={connectWallet} className='flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]'>
+                            <p className='text-white text-base font-semibold'>
+                                Connect Wallet
+                            </p>
+                        </button>
+                    )}
             </ul>
             <div className="flex relative">
                 {toogleMenu
